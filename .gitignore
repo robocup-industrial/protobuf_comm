@@ -1,0 +1,40 @@
+# Generic globs
+/core*
+/bin/core*
+*~
+.deps_*
+.objs_*
+*_tolua.cpp
+*_tolua.pkg
+
+# Generated protobuf files
+*.pb.h
+*.pb.cpp
+
+# Specific paths, _ variants for cross compilation environments
+/access_log
+/bin/
+/bin/access_log
+/bin_*/
+/cfg/*.db
+/cfg/*.key
+/cfg/*.crt
+/cfg/host.yaml
+/doc/api
+/doc/man
+/doc/lua
+/lib/
+/lib_*/
+/log/
+/plugins/
+/plugins_*
+/warnings.txt
+
+# Eclipse project files, some are using it...
+.cproject
+.project
+.settings
+
+# Vim files
+.*.swp
+.*.swo
