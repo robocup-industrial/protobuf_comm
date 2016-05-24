@@ -1,0 +1,5 @@
+Name: protobuf_comm
+Description: Light-weight communication library for protobuf messages
+Version: @VERSION@
+Cflags: -I@EXEC_INCDIR@
+Libs: -lprotobuf_comm

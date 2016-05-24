@@ -45,6 +45,7 @@ ifeq ($(HAVE_CPP11)$(HAVE_PROTOBUF)$(HAVE_BOOST_LIBS),111)
   LDFLAGS += $(LDFLAGS_PROTOBUF) $(call boost-libs-ldflags,$(REQ_BOOST_LIBS)) $(LDFLAGS_LIBCRYPTO)
 
   LIBS_all  = $(LIBDIR)/libprotobuf_comm.so
+  PKGCONFIG_all = $(PKGCONFDIR)/protobuf_comm.pc
 else
   ifneq ($(HAVE_PROTOBUF),1)
     WARN_TARGETS += warning_protobuf
@@ -65,5 +66,6 @@ $(WARN_TARGETS_BOOST): warning_boost_%:
 
 endif
 
+include $(BUILDSYSDIR)/genpkgconfig.mk
 include $(BUILDSYSDIR)/base.mk
 
