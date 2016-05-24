@@ -34,7 +34,7 @@ MANPAGES_install = $(addprefix $(DESTDIR)$(EXEC_MANDIR)/,$(patsubst $(abspath $(
 # Main install target
 .PHONY: install install_test_basedir install_config install_buildsys install_lua install_apidoc uncolored-install
 uncolored-install: install
-install: install_test_basedir presubdirs $(subst $(LIBDIR),$(DESTDIR)$(EXEC_LIBDIR),$(LIBS_all) $(LIBS_gui)) $(subst $(PLUGINDIR),$(DESTDIR)$(EXEC_PLUGINDIR),$(PLUGINS_all)) $(subst $(BINDIR),$(DESTDIR)$(EXEC_BINDIR),$(BINS_all) $(BINS_gui)) $(MANPAGES_install) resdirs subdirs install_buildsys install_config install_lua install_apidoc
+install: install_test_basedir presubdirs $(subst $(LIBDIR),$(DESTDIR)$(EXEC_LIBDIR),$(LIBS_all) $(LIBS_gui)) $(subst $(PLUGINDIR),$(DESTDIR)$(EXEC_PLUGINDIR),$(PLUGINS_all)) $(subst $(BINDIR),$(DESTDIR)$(EXEC_BINDIR),$(BINS_all) $(BINS_gui)) $(MANPAGES_install) $(subst $(PKGCONFDIR),$(DESTDIR)$(EXEC_PKGCONFDIR),$(PKGCONFIG_all)) resdirs subdirs install_buildsys install_config install_lua install_apidoc
 
 # Only allow "make install" from basedir
 install_test_basedir:
@@ -208,6 +208,11 @@ $(DESTDIR)$(EXEC_BINDIR)/%: $(BINDIR)/%
 		$(SRCDIR)/$*.desktop > $(DESTDIR)$(EXEC_DFILEDIR)/$*.desktop; \
 		chmod 644 $(DESTDIR)$(EXEC_DFILEDIR)/$*.desktop; \
 	fi
+
+# Plugin install target
+$(DESTDIR)$(EXEC_PKGCONFDIR)/%.pc: $(PKGCONFDIR)/%.pc
+	$(SILENTSYMB) echo -e "$(INDENT_PRINT)--- Copying pkg-config file $* to $@"
+	$(SILENT)install -D -m 0644 $< $@ || exit $$?
 
 
 # Manpage install target

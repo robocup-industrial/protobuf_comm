@@ -47,6 +47,7 @@ EXEC_RESDIR        = $(EXEC_BASEDIR)/share/protobuf_comm
 EXEC_LIBDIR        = $(EXEC_BASEDIR)/lib$(LIBBITS)
 EXEC_FFLIBDIR      = $(EXEC_LIBDIR)/$(FFLIBSUBDIR)
 EXEC_PLUGINDIR     = $(EXEC_FFLIBDIR)/plugins
+EXEC_PKGCONFDIR    = $(EXEC_LIBDIR)/pkgconfig
 EXEC_IFACEDIR      = $(EXEC_FFLIBDIR)/interfaces
 EXEC_INCDIR        = $(EXEC_BASEDIR)/include/protobuf_comm
 EXEC_DFILEDIR      = $(EXEC_BASEDIR)/share/applications
