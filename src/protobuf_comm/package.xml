@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>protobuf_comm</name>
+  <version>0.0.1</version>
+  <description>
+    protobuf_comm:
+    Light-weight communication library for protobuf messages.
+    
+    Note: the recommended way to install protobuf_comm as a system library.
+    The library is ROS independent.
+    It has been given a package.xml and CMakeLists.txt for convenience.
+  </description>
+
+  <author email="niemueller@kbsg.rwth-aachen.de">Tim Niemueller</author>
+  <maintainer email="niemueller@kbsg.rwth-aachen.de">Tim Niemueller</maintainer>
+  <maintainer email="alexander.moriarty@brsu.de">Alexander Moriarty</maintainer>
+
+  <license>GPLv2</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
